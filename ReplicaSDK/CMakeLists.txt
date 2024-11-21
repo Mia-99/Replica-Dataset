@@ -56,3 +56,25 @@ target_link_libraries(ReplicaRenderer
                       ptex
                       stdc++fs
 )
+
+add_executable(ReplicaRendererCustom src/render_given_pose.cpp src/MirrorSurface.cpp)
+
+target_link_libraries(ReplicaRendererCustom
+                      ${Pangolin_LIBRARIES}
+                      ${dl_LIBRARIES}
+                      GL
+                      GLEW
+                      ptex
+                      stdc++fs
+)
+
+add_executable(ReplicaViewerCustom src/viewer_with_lines.cpp src/MirrorSurface.cpp)
+
+target_link_libraries(ReplicaViewerCustom
+                      ${Pangolin_LIBRARIES}
+                      ${dl_LIBRARIES}
+                      GL
+                      GLEW
+                      ptex
+                      stdc++fs
+)

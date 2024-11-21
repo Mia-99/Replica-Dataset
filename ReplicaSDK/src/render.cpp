@@ -21,8 +21,8 @@ int main(int argc, char* argv[]) {
     ASSERT(pangolin::FileExists(surfaceFile));
   }
 
-  const int width = 1280;
-  const int height = 960;
+  const int width = 1200;
+  const int height = 680;
   bool renderDepth = true;
   float depthScale = 65535.0f * 0.1f;
 
@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
   pangolin::ManagedImage<uint16_t> depthImageInt(width, height);
 
   // Render some frames
-  const size_t numFrames = 100;
+  const size_t numFrames = 2;
   for (size_t i = 0; i < numFrames; i++) {
     std::cout << "\rRendering frame " << i + 1 << "/" << numFrames << "... ";
     std::cout.flush();

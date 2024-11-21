@@ -2,6 +2,7 @@
 #include <PTexLib.h>
 
 #include <pangolin/display/display.h>
+#include <pangolin/utils/file_utils.h>
 #include <pangolin/display/widgets/widgets.h>
 
 #include "GLCheck.h"
@@ -23,9 +24,10 @@ int main(int argc, char* argv[]) {
   }
 
   const int uiWidth = 180;
-  const int width = 1280;
-  const int height = 960;
-
+  // const int width = 1280;
+  // const int height = 960;
+  const int width = 400;
+  const int height = 300;
   // Setup OpenGL Display (based on GLUT)
   pangolin::CreateWindowAndBind("ReplicaViewer", uiWidth + width, height);
 
@@ -94,6 +96,7 @@ int main(int argc, char* argv[]) {
   PTexMesh ptexMesh(meshFile, atlasFolder);
 
   pangolin::Var<float> exposure("ui.Exposure", 0.01, 0.0f, 0.1f);
+  // pangolin::Var<float> exposure("ui.Exposure", 0.01, 0.0f, 0.1f);
   pangolin::Var<float> gamma("ui.Gamma", ptexMesh.Gamma(), 1.0f, 3.0f);
   pangolin::Var<float> saturation("ui.Saturation", ptexMesh.Saturation(), 0.0f, 2.0f);
   pangolin::Var<float> depthScale("ui.Depth_scale", 0.1f, 0.0f, 1.0f);
