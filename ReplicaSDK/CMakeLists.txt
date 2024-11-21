@@ -68,13 +68,3 @@ target_link_libraries(ReplicaRendererCustom
                       stdc++fs
 )
 
-add_executable(ReplicaViewerCustom src/viewer_with_lines.cpp src/MirrorSurface.cpp)
-
-target_link_libraries(ReplicaViewerCustom
-                      ${Pangolin_LIBRARIES}
-                      ${dl_LIBRARIES}
-                      GL
-                      GLEW
-                      ptex
-                      stdc++fs
-)
