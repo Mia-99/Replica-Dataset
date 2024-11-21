@@ -212,13 +212,19 @@ int main(int argc, char *argv[]) {
 
   // load mesh and textures
   PTexMesh ptexMesh(meshFile, atlasFolder);
+
   pangolin::Var<float> exposure("ui.Exposure", 0.01, 0.0f, 0.1f);
 
   pangolin::ManagedImage<Eigen::Matrix<uint8_t, 3, 1>> image(width, height);
   pangolin::ManagedImage<float> depthImage(width, height);
   pangolin::ManagedImage<uint16_t> depthImageInt(width, height);
 
-  ptexMesh.SetExposure(exposure);
+  
+    // add condition if office 0 1
+  if (trajFile.find("office0") == std::string::npos && trajFile.find("office1") == std::string::npos) {
+      // Set the exposure of ptexMesh for office 2 3 4
+      ptexMesh.SetExposure(exposure);
+  }
 
   // Render some frames
   const size_t numFrames = poses.size();
